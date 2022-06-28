@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="io.github.domi04151309.alwayson"
+    package="com.example.aoa"
     tools:ignore="GoogleAppIndexingWarning">
 
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
@@ -93,7 +93,7 @@
         </receiver>
 
         <activity
-            android:name="io.github.domi04151309.alwayson.actions.alwayson.AlwaysOn"
+            android:name="com.example.aoa.actions.alwayson.AlwaysOn"
             android:configChanges="orientation|screenSize"
             android:excludeFromRecents="true"
             android:hardwareAccelerated="false"
@@ -103,7 +103,7 @@
             android:theme="@style/AppThemeScreenOff" />
 
         <service
-            android:name="io.github.domi04151309.alwayson.services.AlwaysOnTileService"
+            android:name="com.example.aoa.services.AlwaysOnTileService"
             android:icon="@drawable/ic_always_on_black"
             android:label="@string/AlwaysOn"
             android:exported="true"
@@ -166,7 +166,7 @@
         </activity>
 
         <receiver
-            android:name="io.github.domi04151309.alwayson.receivers.AlwaysOnAppWidgetProvider"
+            android:name="com.example.aoa.receivers.AlwaysOnAppWidgetProvider"
             android:exported="true"
             android:label="@string/AlwaysOn">
             <intent-filter>

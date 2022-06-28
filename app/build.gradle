@@ -1,24 +1,17 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
-def readAndUnderstoodLicense = false
-
 android {
     compileSdkVersion 31
     defaultConfig {
-        applicationId "io.github.domi04151309.alwayson"
+        applicationId "com.example.aoa"
         minSdkVersion 24
         targetSdkVersion 31
-        versionCode 384
-        versionName "3.8.4"
+        versionCode 1
+        versionName "1.0"
     }
     buildTypes {
         debug {
-            minifyEnabled true
-            shrinkResources true
-            applicationIdSuffix '.debug'
-            versionNameSuffix ' debug'
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         release {
             minifyEnabled true
@@ -26,28 +19,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    lint {
-        disable "MissingTranslation"
-    }
-}
-
-preBuild.doFirst {
-    def data = file('./src/main/res/xml/pref_about.xml').getText().contains('app:key="license"')
-    if (!data) throw new Exception(
-            'Please note that removing the license from the about page is not allowed if you plan' +
-                    'to publish your modified version of this app. ' +
-                    'Please read the project\'s LICENSE.'
-    )
-    if (!(android.defaultConfig.applicationId.contains('domi04151309') || readAndUnderstoodLicense)) {
-        throw new Exception(
-                'Please make sure you have read and understood the LICENSE!'
-        )
-    }
 }
 
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'androidx.preference:preference-ktx:1.1.1'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'androidx.preference:preference-ktx:1.2.0'
     implementation "androidx.recyclerview:recyclerview:1.2.1"
     implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.1.0'
     implementation 'com.jaredrummler:colorpicker:1.1.0'
